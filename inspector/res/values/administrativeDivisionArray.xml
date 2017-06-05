@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="administrativeDivisionArray">
+     <item>请选择行政区域</item> 
+     <item>八里台工业园</item> 
+    </string-array>
+</resources>

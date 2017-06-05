@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="paymentSateArray">
+     <item>支付状态</item> 
+     <item>未付</item>  
+     <item>逃费</item>  
+     <item>现金支付</item>
+     <item>移动支付</item>  
+     <item>余额支付</item>  
+    </string-array>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="parkingnumbertotal">总数：10</string>
+    <string name="parkingnumberidle">空闲：8</string>
+    <string name="parkingdetails">泊位详情</string>
+</resources>

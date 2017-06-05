@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <ListView   
+            android:id="@+id/list_result_integrated_query"  
+            android:layout_width="match_parent"  
+            android:background="#EBEBEB"
+            android:divider="#E94509"        
+            android:dividerHeight="1dp" 
+            android:layout_height="wrap_content">            
+     </ListView>
+     <View
+             android:id="@+id/list_divider_integrated_query"  
+             android:layout_below="@+id/list_result_integrated_query"
+             android:layout_width="match_parent"  
+              android:layout_height="1dp"
+              android:background="#E94509"
+              android:visibility="gone" >
+     </View>
+     <TextView
+        android:id="@+id/tv_notify_resule_list_empty_integrated_query"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="无停车记录"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:visibility="gone"/>
+</RelativeLayout>

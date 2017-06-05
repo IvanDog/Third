@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Strings related to main -->
+    <string name="integratedQueryButton">综合\n查询</string>
+    <string name="parkingQueryButton">泊位\n查询</string>
+    <string name="inspectButton">稽查</string>
+    <string name="supervisionGuideButton">监督\n指南</string>
+     <string name="workAttendanceButton">考勤\n签到</string>
+     <string name="userAccountButton">个人\n中心</string>
+</resources>

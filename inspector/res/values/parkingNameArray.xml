@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="parkingNameArray">
+     <item>请选择车场名称</item> 
+     <item>易华录停车场</item> 
+     <item>津港公路停车场</item>  
+    </string-array>
+</resources>

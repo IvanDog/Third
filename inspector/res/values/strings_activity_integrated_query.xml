@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Strings related to arriving -->
+    <string name="integratedQueryTitle">综合查询</string>
+    <string name="divisionTitleIntegratedQuery">查询区域</string>
+    <string name="parkingInformationTitleIntegratedQuery">停车信息</string>
+    <string name="confirmIntegratedQuery">查询</string>
+    <string name="toolCollectorNameIntegratedQuery">收费员姓名</string>
+    <string name="toolCollectorNumberIntegratedQuery">收费员工号</string>
+    <string name="licensePlateIntegratedQuery">牌照号码</string>
+    <string name="expenseIntegratedQuery">停车费用</string>     
+    <string name="administrativeDivisionintegratedQuery">行政区域</string>  
+</resources>

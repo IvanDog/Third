@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="carTypeArray">
+     <item>车辆类型</item> 
+     <item>小客车</item>  
+     <item>大客车</item>  
+     <item>货车</item>  
+    </string-array>
+</resources>

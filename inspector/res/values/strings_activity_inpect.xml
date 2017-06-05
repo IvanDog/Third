@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Strings related to arriving -->
+    <string name="inspectTitle">稽查</string>
+    <string name="basicInformationTitleInspect">基本信息</string>
+    <string name="administrativeDivisionTitleInspect">稽查区域</string>
+    <string name="inspectResultTitleInspect">稽查结果</string>
+    <string name="toolCollectorNameInspect">收费员姓名</string>
+    <string name="toolCollectorNumberInspect">收费员工号</string>
+    <string name="phenomenonDescribeInspect">违规现象描述</string>
+    <string name="penaltyInspect">罚款金额</string>
+    <string name="printinspect">打印</string>
+    <string name="confirminspect">确认</string>
+    <string name="deleteimage">删除</string>
+</resources>
