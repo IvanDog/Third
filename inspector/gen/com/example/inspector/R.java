@@ -37,7 +37,7 @@ public final class R {
         public static final int ic_add_photo_64px=0x7f020006;
         public static final int ic_arrow_drop_down_black_18dp=0x7f020007;
         public static final int ic_attendance_button=0x7f020008;
-        public static final int ic_background_login=0x7f020009;
+        public static final int ic_background_login_inspector=0x7f020009;
         public static final int ic_backspace_white_18dp=0x7f02000a;
         public static final int ic_car_in_parking_24px=0x7f02000b;
         public static final int ic_car_information_32px=0x7f02000c;

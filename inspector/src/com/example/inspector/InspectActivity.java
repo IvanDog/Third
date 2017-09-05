@@ -1,12 +1,8 @@
 package com.example.inspector;
 
-import java.io.ByteArrayOutputStream;
 
-import com.example.inspector.IntegratedQueryActivity.NameWatcher;
-import com.example.inspector.IntegratedQueryActivity.NumberWatcher;
 import com.example.inspector.R.drawable;
 
-import printerdemo.PrinterClass;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -14,8 +10,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -74,7 +68,6 @@ public class InspectActivity extends Activity {
 	private Bitmap mPhotoSecond = null;
 	private Bitmap mPhotoThird = null;
 	private Bitmap mPhotoFourth = null;
-	private PrinterClass mPrinter;
     private boolean mPaperTemState = true;
     private int mRecindex = 0;
     private String mRecviceMessage = "";
@@ -89,6 +82,8 @@ public class InspectActivity extends Activity {
 	private static final int EVENT_ERROR_FINISH_INFORMATION= 103;
 	private static final int EVENT_ERROR_FINISH_CONFIRM = 104;
 	private final static int TAKE_PHOTO =201;
+	
+	private static String LOG_TAG = "PrintPreviewActivity";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -389,16 +384,6 @@ public class InspectActivity extends Activity {
 	        	}
 		    }
 		});
-	   /*mPrinter = new PrinterClass();
-	   mPrinter.setPrinterResponseMessageListener(new PrinterClass.PrinterResponseMessageListener() {
-            public void response(byte[] RecMessage) {
-                if(mRecindex ==1){
-                	mRecviceMessage =mPrinter.bytesToHex(RecMessage,0,RecMessage.length);
-                }else if(mRecindex ==2){
-                	//TODO
-                }
-            }
-        });*/
         IntentFilter filter = new IntentFilter();  
         filter.addAction("ExitApp");  
         filter.addAction("BackMain");  
@@ -494,10 +479,10 @@ public class InspectActivity extends Activity {
     				dialog.show();
     				printBT.setOnClickListener(new OnClickListener() {
     				    public void onClick(View paramView) {
-    	                    //mPrinter.printer_uart_on();
-    	                    //mPrinter.send(sb.toString());
+    				    	int stat = MyApp.ddi.ddi_prnt_esc(new byte[]{0x1B, 0x40}, 2); //初始化
+    				    	Log.e(LOG_TAG,"stat is " + stat );
+    				    	print_string(sb.toString());
     	                	Toast.makeText(getApplicationContext(), "该设备不支持打印功能", Toast.LENGTH_SHORT).show();
-    	                	//Toast.makeText(getApplicationContext(), "打印成功", Toast.LENGTH_SHORT).show();
     				        dialog.cancel();
     				    }
     			    });
@@ -524,10 +509,6 @@ public class InspectActivity extends Activity {
         }
     };
     
-    private int doGetData(){
-        SharedPreferences settings = getSharedPreferences("settings", BIND_AUTO_CREATE);
-        return settings.getInt("data",9600);
-    }
     
     private void openTakePhoto(){
 		 /**
@@ -591,6 +572,20 @@ public class InspectActivity extends Activity {
 	      }
 	   }
 	
+    private void print_string(String text){
+        try {
+        	Log.e(LOG_TAG,"print_string->try" ); 
+            byte [] prntBuf = text.getBytes("GBK");
+            MyApp.ddi.ddi_prnt_esc(prntBuf, prntBuf.length);
+            int stat = MyApp.ddi.ddi_prnt_esc(new byte[]{0x1B, 0x4A, 18}, 3);
+        	Log.e(LOG_TAG,"print_string->try stat is " + stat ); 
+        }catch (Exception e)
+        {
+        	Log.e(LOG_TAG,"print_string->exception" + e); 
+            e.printStackTrace();
+        }
+    }
+    
 	/**
 	 * 显示进度框
 	 */
